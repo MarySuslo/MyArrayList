@@ -89,7 +89,7 @@ public class ArrayList<T> {
      *              Новый элемент добавляется на "освободившееся" место по опреленному индексу
      */
     public void add(int index, T item) {
-        if (index < 0 || index >= size)
+        if ((index < 0 || index >= size)&&size!=0)
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
 
         if (size == array.length)
@@ -157,4 +157,5 @@ public class ArrayList<T> {
         items = array = Arrays.copyOf(array, size);
         return items;
     }
+
 }
